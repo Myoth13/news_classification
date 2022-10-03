@@ -2,9 +2,11 @@
 
 <h2>Scraping articles</h2>
 Spider scripts for scraping news articles from:
-* https://www.indiatoday.in/politics PoliticsSpider.py
-* https://timesofindia.indiatimes.com/topic/finance EconomicsSpider.py
-* https://timesofindia.indiatimes.com/topic/crime-news CrimeSpider.py
+<ul>
+<li>https://www.indiatoday.in/politics PoliticsSpider.py</li>
+<li>https://timesofindia.indiatimes.com/topic/finance EconomicsSpider.py</li>
+<li>https://timesofindia.indiatimes.com/topic/crime-news CrimeSpider.py</li>
+</ul>
 
 Each script creates a sub folder and stores the articles into csv files. 
 
@@ -23,7 +25,9 @@ This script creates a pipeline and trains it using pickled dataset
 1) Run each spider script for scraping from news sites
 
 Attention! CSS can be changed on the source website so needs check if it is still up-to-date
+
 2) Run load_data.py
 
 It will make/clean a data folder and save datasets to pickles
+
 3) Run classify.py to build a model
