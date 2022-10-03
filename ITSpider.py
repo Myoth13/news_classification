@@ -1,6 +1,7 @@
 import scrapy
 from scrapy.crawler import CrawlerProcess
-
+import pandas as pd
+import datetime
 
 class ITSpider(scrapy.Spider):
 
@@ -8,7 +9,7 @@ class ITSpider(scrapy.Spider):
 
     def start_requests(self):
         urls = ['https://www.indiatoday.in/india']
-        page_num = 10
+        page_num = 100
         for page in range(1, page_num):
             urls.append('https://www.indiatoday.in/india?page='+str(page))
 
@@ -31,12 +32,9 @@ class ITSpider(scrapy.Spider):
         for description in descriptions:
             full_text = full_text + description
 
-        import pandas as pd
-        import datetime
         df = pd.DataFrame({'header': header, 'short': short_text, 'full': full_text})
         file_name = 'data/text'+str(datetime.datetime.now())
         df.to_parquet(file_name)
-
 
 process = CrawlerProcess()
 process.crawl(ITSpider)
