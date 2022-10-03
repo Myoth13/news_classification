@@ -28,8 +28,8 @@ class TOFSpider(scrapy.Spider):
         header = response.css('h1._1Y-96 > span::text').extract()
         description = response.css('div._3YYSt::text').extract()
 
-        df = pd.DataFrame({'header': header, 'full': ' '.join(description)})
-        file_name = 'data/text'+str(datetime.datetime.now())
+        df = pd.DataFrame({'header': header, 'short': '', 'full': ' '.join(description)})
+        file_name = 'data/text'+str(datetime.datetime.now())+'TOF.parquet'
         df.to_parquet(file_name)
 
 process = CrawlerProcess()

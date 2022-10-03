@@ -33,7 +33,7 @@ class ITSpider(scrapy.Spider):
             full_text = full_text + description
 
         df = pd.DataFrame({'header': header, 'short': short_text, 'full': full_text})
-        file_name = 'data/text'+str(datetime.datetime.now())
+        file_name = 'data/text'+str(datetime.datetime.now())+'IT.parquet'
         df.to_parquet(file_name)
 
 process = CrawlerProcess()
