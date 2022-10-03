@@ -1,5 +1,6 @@
 <h1>News classification project</h1>
-
+This project is made for scraping news articles from the two websites and building classification model with three labels: 
+'politics', 'economics' and 'crimes'
 <h2>Scraping articles</h2>
 Spider scripts for scraping news articles from:
 
