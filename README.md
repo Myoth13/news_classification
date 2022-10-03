@@ -2,6 +2,7 @@
 
 <h2>Scraping articles</h2>
 Spider scripts for scraping news articles from:
+
 <ul>
 <li>https://www.indiatoday.in/politics PoliticsSpider.py</li>
 <li>https://timesofindia.indiatimes.com/topic/finance EconomicsSpider.py</li>
@@ -11,12 +12,12 @@ Spider scripts for scraping news articles from:
 Each script creates a sub folder and stores the articles into csv files. 
 
 <h2>Dataset</h2>
-Script name: load_data.py
+<b>Script name:</b> load_data.py
 
 This script creates the dataframe and save it as a pickled file for later use.
 
 <h2>Classification</h2>
-Script name: classify.py
+<b>Script name:</b> classify.py
 
 This script creates a pipeline and trains it using pickled dataset
 
