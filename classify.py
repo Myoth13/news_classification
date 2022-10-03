@@ -8,6 +8,7 @@ from sklearn.preprocessing import MaxAbsScaler
 from sklearn.pipeline import Pipeline
 from sklearn.feature_selection import chi2, SelectKBest
 from sklearn.metrics import classification_report
+from SparseInteractions import SparseInteractions
 
 df = pd.read_pickle('ztmp/session/mysess/df.pkl')
 
@@ -27,6 +28,7 @@ pl = Pipeline([
                                                  norm=None, binary=False, alternate_sign=False,
                                                  ngram_range=(1, 2))),
     ('dim_red', SelectKBest(chi2, k=chi_k)),
+    ('int', SparseInteractions(degree=2)),
     ('scale', MaxAbsScaler()),
     ('clf', OneVsRestClassifier(LogisticRegression()))
 ])
