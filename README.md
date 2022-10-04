@@ -11,7 +11,7 @@ Spider scripts for scraping news articles from:
 </ul>
 
 Each script creates a sub folder and stores the articles into parquet files. 
-Check for the dataset to be well-balanced: amount of articles for each label should be roughly equal for the best performance or change weights in the model.  
+Check for the dataset to be well-balanced: the amount of articles for each label should be roughly equal for the best performance, or you have to adjust weights in the model.  
 
 <h2>Dataset</h2>
 <b>Script name:</b> load_data.py
