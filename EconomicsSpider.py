@@ -45,8 +45,9 @@ class EconomicsSpider(scrapy.Spider):
         full_text = ' '.join(description)
         short_text = ''
         df = pd.DataFrame({'header': header, 'short': short_text, 'full': full_text})
-        file_name = folder + '/text'+str(datetime.datetime.now())+'.csv'
-        df.to_csv(file_name)
+        file_name = folder + '/text'+str(datetime.datetime.now())+'.parquet'
+        df.to_parquet(file_name)
+
 
 process = CrawlerProcess()
 process.crawl(EconomicsSpider)
